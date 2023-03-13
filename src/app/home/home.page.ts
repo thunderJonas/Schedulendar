@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { CalendarComponent } from 'ionic2-calendar';
 import { Component, ViewChild, OnInit, Inject, LOCALE_ID } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
@@ -14,8 +15,12 @@ export class HomePage implements OnInit {
   viewTitle: string = '';
 
   calendar = {
-    mode: 'month',
+    mode: 'month' as CalendarMode,
     currentDate: new Date(),
+    startHour : 6,
+    endHour: 20,
+    step: 30,
+    startingDayWeek: 1,
   };
 
   selectedDate: Date = new Date();
